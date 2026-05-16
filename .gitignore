@@ -1,0 +1,17 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+
+# Rider / JetBrains
+.idea/
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
