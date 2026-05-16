@@ -1,0 +1,6 @@
+PUT http://localhost:5006/solicitacoes/1
+Content-Type: application/json
+
+{
+  "status": "Concluída"
+}
