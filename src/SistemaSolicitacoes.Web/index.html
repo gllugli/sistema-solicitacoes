@@ -1,10 +1,57 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sistema de Solicitações</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <h1>Sistema de Solicitações</h1>
+    <div>
+        <div>
+            <p>Pendentes: <span id="total-pendentes">0</span></p>
+        </div>
+        <div>
+            <p>Concluídas: <span id="total-concluidas">0</span></p>
+        </div>
+    </div>
 
+    <form id="form-solicitacao">
+        <label for="titulo">Título:</label><br>
+        <input type="text" id="titulo" name="titulo"><br>
+        <label for="solicitante">Solicitante</label><br>
+        <input type="text" id="solicitante" name="solicitante"><br>
+        <label for="status">Status</label><br>
+        <select id="status" name="status">
+            <option value="" disabled selected>Selecione um Status</option>
+            <option value="Concluída">Concluída</option>
+            <option value="Pendente">Pendente</option>
+        </select><br>
+        <input type="submit" value="Enviar Solicitação">
+    </form>
+
+    <label for="filtro">Filtrar por Status</label>
+    <select id="filtro" name="filtro">
+        <option value="Todos">Todos</option>
+        <option value="Concluída">Concluída</option>
+        <option value="Pendente">Pendente</option>
+    </select><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Solicitante</th>
+                <th>Status</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-solicitacoes">
+        </tbody>
+    </table>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
