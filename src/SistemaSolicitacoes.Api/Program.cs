@@ -1,20 +1,34 @@
+using Microsoft.Extensions.FileProviders;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
+var frontendPath = Path.Combine(
+    app.Environment.ContentRootPath,
+    "..",
+    "SistemaSolicitacoes.Web"
+);
+
+var fileProvider = new PhysicalFileProvider(frontendPath);
+
+app.UseDefaultFiles(new DefaultFilesOptions
+{
+    FileProvider = fileProvider
+});
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = fileProvider
+});
 
 app.UseAuthorization();
 
