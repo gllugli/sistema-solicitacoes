@@ -17,8 +17,6 @@ Aplicação full-stack para cadastro, listagem, filtro e atualização de status
 - [API Endpoints](#api-endpoints)
 - [Estrutura de Pastas](#estrutura-de-pastas)
 - [Solução de Problemas](#solução-de-problemas)
-- [Checklist de Entrega](#checklist-de-entrega)
-- [Próximos Passos](#próximos-passos)
 
 ## Visão Geral
 
